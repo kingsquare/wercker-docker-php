@@ -17,4 +17,4 @@ RUN apt-get update && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     curl -o /usr/local/bin/phpunit https://phar.phpunit.de/phpunit.phar && \
     chmod +x /usr/local/bin/phpunit && \
-    mkdir -p ~/.ssh/ /etc/ssh
+    mkdir -p ~/.ssh /root/.ssh /etc/ssh
