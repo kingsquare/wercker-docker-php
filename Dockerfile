@@ -16,4 +16,5 @@ RUN apt-get update && \
     echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
     curl -o /usr/local/bin/phpunit https://phar.phpunit.de/phpunit.phar && \
-    chmod +x /usr/local/bin/phpunit
+    chmod +x /usr/local/bin/phpunit && \
+    mkdir -p ~/.ssh/ /etc/ssh
