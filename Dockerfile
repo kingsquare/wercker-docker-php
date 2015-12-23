@@ -12,6 +12,8 @@ RUN apt-get update && \
         git \
         && \
     docker-php-ext-install mcrypt zip bz2 mbstring && \
+    docker-php-ext-enable opcache && \
+    echo "opcache.enable_cli = On" > /usr/local/etc/php/conf.d/opcache-cli.ini && \
     echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini && \
     echo "memory_limit=1024M" > /usr/local/etc/php/conf.d/memory-limit.ini && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer && \
