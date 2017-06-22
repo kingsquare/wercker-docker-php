@@ -17,22 +17,27 @@ This also includes:
 To use this in wercker:
 
 ```
+box: kingsquare/wercker-php-node
 build:
-  box: kingsquare/wercker-php-node
   steps:
     - script:
-      name: set yarn / composer cache
+      name: set environment variables for using wercker cache
       code: |
-      export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
-      export COMPOSER_CACHE_DIR=$WERCKER_CACHE_DIR/composer
-      
-    - script:
-      name: install Node dependencies
-      code: |
-        HOME=$YARN_CACHE yarn
+        export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
+        export COMPOSER_CACHE_DIR=$WERCKER_CACHE_DIR/composer
 
     - mbrevda/composer-install:
       opts: --no-interaction --optimize-autoloader
+
+    - script:
+      name: install NodeJs dependencies for building sass et al
+      code: |
+        HOME=$YARN_CACHE yarn
+
+    - script:
+      name: build
+      code: |
+        yarn run build
 
 ```
 
