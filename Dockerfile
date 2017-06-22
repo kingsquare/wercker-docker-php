@@ -68,6 +68,7 @@ RUN groupadd --gid 1000 node \
         libbz2-dev \
         zlib1g-dev \
         git \
+        openssh-client \
         rsync \
   && docker-php-ext-install mcrypt zip bz2 mbstring \
   && docker-php-ext-enable opcache \
