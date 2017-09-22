@@ -1,5 +1,5 @@
 FROM php:7-cli
-LABEL maintainer Kingsquare<docker@kingsquare.nl>
+LABEL maintainer=Kingsquare<docker@kingsquare.nl>
 
 ENV TZ "Europe/Amsterdam"
 ENV NODE_VERSION 8.1.2

@@ -21,23 +21,23 @@ box: kingsquare/wercker-php-node
 build:
   steps:
     - script:
-      name: set environment variables for using wercker cache
-      code: |
-        export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
-        export COMPOSER_CACHE_DIR=$WERCKER_CACHE_DIR/composer
+      name: set yarn cache
+      code: yarn config set cache-folder $WERCKER_CACHE_DIR/yarn
+
+    - script:
+      name: set composer environment variables for using wercker cache
+      code: export COMPOSER_CACHE_DIR=$WERCKER_CACHE_DIR/composer
 
     - mbrevda/composer-install:
       opts: --no-interaction --optimize-autoloader
 
     - script:
-      name: install NodeJs dependencies for building sass et al
-      code: |
-        HOME=$YARN_CACHE yarn
+      name: install NodeJS dependencies for building sass et al
+      code: yarn
 
     - script:
       name: build
-      code: |
-        yarn run build
+      code: yarn run build
 
 ```
 
