@@ -14,6 +14,7 @@ RUN set -ex; \
         fetchDeps="\
             dirmngr \
             gnupg \
+            libzip-dev \
         "; \
     fi; \
     apt-get update; \
