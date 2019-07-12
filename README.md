@@ -1,3 +1,5 @@
+![Docker Build Status](https://img.shields.io/docker/build/kingsquare/wercker-php-node.svg?style=flat-square)
+
 # wercker-php-node
 
 This is a box to combine PHP and Node in a single box.
