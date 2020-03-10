@@ -73,7 +73,7 @@ RUN set -ex; \
         git \
         openssh-client \
         rsync; \
-  docker-php-ext-install zip bz2 mbstring; \
+  docker-php-ext-install zip bz2; \
   docker-php-ext-enable opcache; \
   echo "opcache.enable_cli = On" > /usr/local/etc/php/conf.d/opcache-cli.ini; \
   echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini; \
