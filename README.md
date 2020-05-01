@@ -1,8 +1,11 @@
+![Docker Automated build](https://img.shields.io/docker/automated/kingsquare/wercker-php-node?style=flat-square)
 ![Docker Build Status](https://img.shields.io/docker/build/kingsquare/wercker-php-node.svg?style=flat-square)
 
 # wercker-php-node
 
 This is a box to combine PHP and Node in a single box.
+
+> For supported version mixes see https://github.com/kingsquare/wercker-php-node/branches
 
 This also includes:
 
@@ -15,7 +18,7 @@ This also includes:
 
  * Node
     * yarn
-    
+
 To use this in wercker:
 
 ```
