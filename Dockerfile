@@ -1,10 +1,10 @@
-FROM php:7.3-cli
+FROM php:7.4-cli
 LABEL maintainer=Kingsquare<docker@kingsquare.nl>
 
 ENV TZ "Europe/Amsterdam"
-ENV NODE_VERSION 12.16.1
+ENV NODE_VERSION 14.1.0
 ENV YARN_VERSION 1.22.4
-ENV COMPOSER_VERSION 1.9.3
+ENV COMPOSER_VERSION 1.10.5
 ENV NPM_CONFIG_LOGLEVEL info
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
@@ -73,7 +73,7 @@ RUN set -ex; \
         git \
         openssh-client \
         rsync; \
-  docker-php-ext-install zip bz2 mbstring; \
+  docker-php-ext-install zip bz2; \
   docker-php-ext-enable opcache; \
   echo "opcache.enable_cli = On" > /usr/local/etc/php/conf.d/opcache-cli.ini; \
   echo "date.timezone = $TZ" > /usr/local/etc/php/conf.d/timezone.ini; \
